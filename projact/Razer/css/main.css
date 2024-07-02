@@ -1,0 +1,428 @@
+@charset "utf-8";
+
+html {scroll-behavior: smooth;}
+
+body {font-family: 'Montserrat', 'Noto Sans KR', sans-serif; font-size: 100%; line-height: 1.5; color: white;}
+
+.inner {max-width: calc( 100% - 10.416% ) ; margin: 0 auto;}
+
+#wrap {overflow-x: hidden; background: black;} /* 가로축에서 벗어나는 것이 보이지 않도록 */
+
+/* header */
+
+#header {height: 100px; position: relative; left: 0; top: 0; width: 100%; z-index: 10;}
+
+#header h1 {height: 70px;}
+
+#header .inner {height: 100px; display: flex; justify-content: space-around; align-items: center;}
+
+#header .inner h1 img {width: 70px; height: 70px;}
+
+
+@media all and (max-width:1200px){
+    #header .ham {transform: scale(0.5,0.5);}
+    #header .inner {justify-content: center;}
+    #header .inner {position: relative;}
+    #header .inner .ham {position: absolute; top: 50%; right: 3%; transform: translate(-3% , -50%);}
+}
+
+/* header gnb */
+
+#header .gnb > li {float: left;}
+#header .gnb > li > a {display: block; font-size: 20px; color: white; padding: 10px 40px;}
+
+/* header gnb depth2 */
+
+#header .depth2 {position: absolute;
+    padding: 0 15px;
+    z-index: 10;
+    background: rgba(0, 0, 0, 0.5);}
+
+#header .depth2 > li > a {display: block; color: white; padding: 5px 15px; transition: color 0.5s;}
+#header .depth2 > li:first-child > a {padding: 15px 15px 5px;}
+#header .depth2 > li:last-child > a {padding: 5px 15px 15px;}
+#header .depth2 > li > a:hover {color: #02ff02;}
+
+
+
+/* ham */
+
+#header .ham {display: none; cursor: pointer;}
+@media all and (max-width:1200px){
+    #header .gnb {display: none;}
+    #header .member_menu {display: none;}
+    #header .ham {display: block;}
+}
+
+/* mgnb */
+
+#header .mgnb_wrap {position: fixed;
+    left: 100%; top: 0;
+    width: 100%; height: 100%;
+    background: black;
+    padding: 100px 5.208% 0;}
+
+#header .mgnb_wrap .mgnb {border-top: 1px solid #02ff02;}
+#header .mgnb_wrap .mgnb > li {border-bottom: 1px solid #02ff02;}
+#header .mgnb_wrap .mgnb > li > a {display: block; font-size: 25px; padding: 20px 0; color: white;}
+#header .mgnb_wrap .mgnb .mdepth2 {padding: 0 0 20px;}
+#header .mgnb_wrap .mgnb .mdepth2 li a {position: relative;
+                                        color: white;
+                                        font-size: 15px;
+                                        display: block;
+                                        padding: 3px 15px;}
+#header .mgnb_wrap .mgnb_close {cursor: pointer; position: absolute; right: 5.208%; top: 35px;}
+
+
+
+
+
+/* header member_menu */
+
+#header .member_menu .member > li  {float: left; padding-left: 20px;}
+#header .member_menu .member > li > a {display: block;}
+#header .member_menu .member > li > a > img {width: 30px; height: 30px;}
+#header .member_menu li:first-child {padding-left: 0;}
+
+/* main_visual */
+
+#main_visual {height: 600px;}
+#main_visual .mv .mv1 {position: relative; height: 600px; background: url(../images/main_img1.png) no-repeat center center; background-size: cover;}
+#main_visual .mv .mv2 {position: relative; height: 600px; background: url(../images/main_img2.png) no-repeat center center; background-size: cover;}
+#main_visual .mv .mv_txt {position: absolute; 
+                        left: 50%; top: 80%; 
+                        transform: translate(-50%, -50%); 
+                        color: white;
+                        text-align: center;
+                        font-size: 25px;}
+#main_visual .mv .mv_txt span {font-weight: normal; font-size: 20px; text-transform: uppercase; opacity: 0.5;}
+#main_visual .mv .mv2 .mv_txt {color: black;}
+
+
+@media all and (max-width:1200px){
+    #main_visual .slick-arrow {display: none !important;}
+    #main_visual .slick-dots {display: none !important;}
+    #main_visual .mv .mv_txt {width: 100%;}
+}
+
+
+@media all and (max-width:768px){
+    #main_visual .mv .mv1 {height: 780px;}
+    #main_visual .mv .mv2 {height: 780px;}
+    #main_visual {height: 780px;}
+    #main_visual .mv .mv_txt {width: 100%;}
+    #main_visual .mv .mv_txt h2 {font-size: 35px;}
+    #main_visual .mv .mv_txt h2 span {font-size: 25px;}
+    #main_visual .slick-arrow {display: none !important;}
+    #main_visual .slick-dots {display: none !important;}
+}
+
+/* main_visual slick-arrow */
+
+#main_visual .slick-arrow {border: 0; font-size: 0; cursor: pointer;
+    width: 30px; height: 55px;
+    position: absolute; top: 50%;
+    transform: translateY(-50%);
+    z-index: 5;
+    opacity: 0.5;}
+#main_visual .slick-prev {background: url(../images/mv_prev.png) no-repeat center center; left: 5.208%;}
+#main_visual .slick-next {background: url(../images/mv_next.png) no-repeat center center; right: 5.208%;}
+
+/* main_visual dots */
+
+#main_visual .slick-dots {position: absolute; left: 50%; bottom: 20px; transform: translateX(-50%);}
+#main_visual .slick-dots li {float: left;}
+#main_visual .slick-dots li button {border: 0; font-size: 0; 
+                                    cursor: pointer;
+                                    width: 50px; height: 2px;
+                                    background: white; opacity: 0.5;}
+#main_visual .slick-dots li.slick-active button {opacity: 1;}
+
+/* value */
+
+#value {padding: 100px 0; overflow: hidden; position: relative; height: 550px; align-items: center;}
+#value .inner { max-width: calc(100% - 10.416%); }
+#value .inner .rz_txt { width: 500px; padding-left: 100px; }
+#value .rz_txt h3 {font-size: 35px;}
+#value .rz_txt h3 span {font-size: 30px; font-weight: 600;}
+#value .rz_txt p {font-size: 15px; padding: 40px 0; opacity: 0.7;}
+#value .rz_txt a {color: white; font-size: 20px;}
+#value .rz_txt a:after {content: ''; width: 0; height: 2px; background: #02ff02; position: absolute; left: 200px; top: 340px; transition: width 0.5s;}
+#value .rz_txt a:hover:after {width: 90px;}
+#value .rz_txt a:hover {color: #02ff02; transition : 0.5s}
+
+#value .inner .rz_img { position: absolute; left: 550px; top: 100px; width: 100%;}
+#value .rz_img .slick-list li {position: relative; margin: 0 10px; }
+#value .rz_img .rz_img_list li p {position: absolute;
+    left: 0; width: 100%;
+    text-align: center;
+    bottom: 5%; color: white; 
+    text-transform: uppercase;
+    font-size: 18px;
+    letter-spacing: -1px;}
+
+#value .rz_img .rz_img_list li img { width: 100%;}
+
+/* #value .slick-arrow */
+
+#value .slick-arrow {border: 0; font-size: 0; cursor: pointer;
+    width: 30px; height: 45px;
+    position: absolute; top: 50%;
+    transform: translateY(-50%);
+    z-index: 6;
+    opacity: 0.5;}
+#value .slick-prev {background: url(../images/mv_prev.png) no-repeat center center; left: 50px;}
+#value .slick-next {background: url(../images/mv_next.png) no-repeat center center; left: calc(60% + 50px)}
+
+
+/* value_visual dots */
+
+#value .slick-dots {position: absolute; left: 32%; bottom: -15%; transform: translateX(-32%);}
+#value .slick-dots li {float: left;}
+#value .slick-dots li button {border: 0; font-size: 0; 
+                            cursor: pointer;
+                            width: 10px; height: 10px;
+                            border-radius: 50%;
+                            margin: 10px;
+                            background: white;}
+#value .slick-dots li:last-child {margin-right: 0;}
+#value .slick-dots li.slick-active button {opacity: 1; background: #02ff02;}
+
+@media all and (max-width:1200px){
+    #value {height: 750px; padding: 0; margin-top: 100px;}
+    #value .inner {position: relative; height: 750px; width: 100%;}
+    #value .inner .rz_txt {text-align: center; width: 100%; padding: 0;}
+    #value .rz_txt p {padding: 10px;}
+    #value .inner .rz_img {position: absolute; left: 50%; top: 160px; transform: translateX(-50%); width: calc(100% - 20.833%); height: 100%;}
+    #value .rz_txt a {position: absolute; left: 50%; top: 650px; transform: translateX(-50%); z-index: 65;}
+    #value .rz_txt a:after {content: ''; width: 0; height: 2px; background: #02ff02; position: absolute; left: 0px; top: 30px; transition: width 0.5s;}
+    #value .rz_txt a:hover:after {width: 90px;}
+    #value .rz_txt a:hover {color: #02ff02; transition : 0.5s}
+}
+
+@media all and (max-width:768px){
+    #value {height: 500px; margin-top: 100px; padding: 0;}
+    #value .inner {position: relative; height: 500px; width: 100%;}
+    #value .inner .rz_txt {text-align: center; width: 100%; padding: 0;}
+    #value .rz_txt p {padding: 10px;}
+    #value .rz_txt a {position: absolute; left: 50%; top: 420px; transform: translateX(-50%);}
+    #value .inner .rz_img {position: absolute; left: 50%; top: 160px; transform: translateX(-50%); width: calc(100% - 20.833%); height: 100%;}
+    #value .rz_img .slick-list li { margin: 0; }
+    #value .rz_txt a:after {content: ''; width: 0; height: 2px; background: #02ff02; position: absolute; left: 0px; top: 30px; transition: width 0.5s;}
+    #value .rz_txt a:hover:after {width: 90px;}
+    #value .rz_txt a:hover {color: #02ff02; transition : 0.5s}
+}
+
+/* sub_visual */
+
+#sub_visual {padding: 100px 0;}
+#sub_visual .inner {max-width: calc(100% - 20.833%);}
+#sub_visual .sv .sv1 {position: relative; height: 400px; background: url(../images/sub-visual_1.png) no-repeat center center; background-size: cover;}
+#sub_visual .sv .sv2 {position: relative; height: 400px; background: url(../images/sub-visual_2.png) no-repeat center center; background-size: cover;}
+#sub_visual .sv .sv_txt {position: absolute;
+                        text-transform: uppercase;
+                        left: 50%; top: 50%; 
+                        transform: translate(-50%, -50%); 
+                        color: white;
+                        text-align: center;
+                        font-size: 25px;}
+#sub_visual .sv .sv_txt a {font-size: 20px; color: white; display: block; width: 150px; position: absolute; left: 50%; top: 350%; transform: translateX(-50%); padding: 10px 0;}
+#sub_visual .sv .sv_txt a:hover {color: #02ff02; transition: 0.5s;}
+#sub_visual .sv .sv_txt a:after {content: ''; width: 0; height: 2px; background: #02ff02; position: absolute; left: 30px; top: 40px; transition: width 0.5s;}
+#sub_visual .sv .sv_txt a:hover:after {width: 90px;}
+#sub_visual .sv .sv_txt a:hover {color: #02ff02; transition : 0.5s}
+
+@media all and (max-width:1200px){
+    #sub_visual {padding: 0;}
+    #sub_visual .inner {max-width: 100%;}
+    #sub_visual .sv .sv_txt {width: 100%;}
+}
+
+/* overview */
+#overview .inner .ov_1 {float: left;}
+
+#overview .inner .ov_2 {float: right;}
+
+#overview .inner {max-width: calc(100% - 22.916%); position: relative; height: 700px;}
+#overview .inner > div {width: calc(100%/2);}
+#overview .inner > .ov_1 {width: 380px; position: absolute; left: 0; top: 0; }
+#overview .inner > .ov_1 > .ov_list_btn {height: 100%;}
+#overview .inner > .ov_1 ul li:nth-of-type(4) {padding-bottom: 0;}
+#overview .inner > .ov_2 {width: 1035px; position: absolute; right: 0; top: 0; }
+#overview .inner img {width: 1035px; height: 100%;}
+#overview h3 {text-align: center; font-size: 50px; text-transform: uppercase; padding-bottom: 100px;}
+#overview .ov_list li {position: relative;}
+
+#overview .ov_list li p span {display: block; font-size: 30px; letter-spacing: 1px;}
+#overview .ov_list li p {position: absolute;
+    left: 50%; top: 50%; 
+    transform: translate(-50%, -50%); 
+    color: white;
+    text-align: center;
+    font-size: 20px;
+    z-index: 11;
+    width: 100%;
+    font-weight: normal;
+    letter-spacing: -1px;
+    line-height: 2;
+    text-shadow: 1px 1px 10px black;}
+
+#overview .inner > .ov_2 > .ov_list .slick-dots {display: none !important;}
+
+/* overview btn */
+#overview .ov_list_btn .slick-track {transform: translateX(0) !important; }
+#overview .ov_list_btn .slick-slide {float: none;}
+
+#overview .ov_list_btn li {font-size: 35px; padding-bottom: 40px; font-weight: lighter; cursor: pointer;}
+#overview .ov_list_btn li:after {content: ''; display: block; background: white; width: 500px; height: 1px; margin: 20px 0;}
+#overview .ov_list_btn li:hover:after { background: #02ff02;}
+#overview .ov_list_btn li:hover {color: #02ff02; transition: 0.5s;}
+
+#overview .ov_list_btn li.slick-current { color: #02ff02; transition: 0.5s;}
+#overview .ov_list_btn li.slick-current:after { background: #02ff02;}
+
+@media all and (max-width:1200px){
+    #overview {margin-top: 100px; height: 100%;}
+    #overview .inner {max-width: 100%;}
+    #overview .inner .ov_1 {display: none;}
+    #overview .inner .ov_2 {width: 100%; top: 0; left: 50%; transform: translateX(-50%);}
+    #overview .inner img {width: 100%; height: 100%;}
+    #overview .inner > .ov_2 > .ov_list .slick-dots {display: block !important;}
+    #overview .inner > .ov_2 .slick-dots {position: absolute; left: 50%; bottom: 20px; transform: translateX(-50%);}
+    #overview .inner > .ov_2 .slick-dots li {float: left;}
+    #overview .inner > .ov_2 .slick-dots li button {border: 0; font-size: 0; 
+                                    cursor: pointer;
+                                    width: 50px; height: 2px;
+                                    background: black; opacity: 0.5;}
+    #overview .inner > .ov_2 .slick-dots li.slick-active button {background: #02ff02; opacity: 1; transition: 0.5s;}
+    #overview .ov_list li p {font-size: 15px;}
+}
+
+
+@media all and (max-width:768px){
+    #overview .inner {height: 400px;}
+}
+
+
+
+/* product */
+
+#product {padding: 100px 0; text-transform: uppercase; font-size: 18px;}
+#product .inner { max-width: calc(100% - 10.416%); display: flex; justify-content: center; align-items: center;}
+#product .product_img {width: 1720px; position: relative;}
+#product .product_img_slide li {position: relative; }
+#product .product_img_slide li p {position: absolute;
+text-align: center;
+left: 5%;
+top: 50%;
+transform: translateY(-50%);}
+
+#product .product_img .product_menu_btn {position: absolute; right: 5%; top: 50%; transform: translateY(-50%); width: 340px;}
+#product .product_img .product_menu_btn li:nth-of-type(4) {padding-bottom: 0;}
+#product .product_img .product_menu_btn li {width: 335px !important; padding-bottom: 80px; display: block; cursor: pointer; position: relative;}
+#product .product_menu_btn .slick-slide {float: none;}
+#product .product_menu_btn .slick-track {transform: translateX(0) !important;}
+#product .product_img .product_menu_btn li:hover {color: #02ff02; transition: 0.5s;}
+#product .product_img .product_menu_btn li:before {content: '';
+    display: inline-block;
+    border: 6px solid transparent;
+    border-right: white 11.5px solid;
+    margin-right: 10px;}
+
+#product .product_img .product_menu_btn li:hover:before {border-right: #02ff02 11.5px solid; transition: 0.5s;}
+
+#product .product_img .product_menu_btn li.slick-current { color: #02ff02; transition: 0.5s;}
+#product .product_img .product_menu_btn li.slick-current:before { border-right: #02ff02 11.5px solid; transition: 0.5s;}
+
+
+#product .m_product_img {display: none; width: calc(100% - 10.416%);}
+#product .m_product_img ul {flex-wrap: wrap; display: flex; justify-content: space-between;}
+#product .m_product_img ul li {width: calc((100% - 20px)/2); height: 690px; position: relative;}
+#product .m_product_img li:nth-child(1) {background: url(../images/razer\ gear_1.jpg) no-repeat center center; background-size: cover;}
+#product .m_product_img li:nth-child(2) {background: url(../images/razer\ gear_2.jpg) no-repeat center center; background-size: cover;}
+#product .m_product_img li:nth-child(3) {background: url(../images/razer\ gear_3.jpg) no-repeat center center; background-size: cover;}
+#product .m_product_img li:nth-child(4) {background: url(../images/razer\ gear_4.jpg) no-repeat center center; background-size: cover;}
+
+#product .m_product_img ul li dl {text-align: center; padding: 60px 0 0;}
+#product .m_product_img ul li dl dt {padding-bottom: 15px; font-size: 25px;}
+#product .m_product_img ul li dl dd {opacity: 0;}
+#product .m_product_img ul li:hover dl dt {color: #02ff02; transition: 0.5s;}
+#product .m_product_img ul li:hover dl dd {opacity: 1; transition: 0.5s;}
+#product .m_product_img ul li:nth-child(1), #room ul li:nth-child(2) {margin-bottom: 20px;}
+
+
+@media all and (max-width:1200px){
+    #product {margin-top: 80px;}
+    #product .product_img {display: none;}
+    #product .m_product_img {display: block;}
+}
+
+@media all and (max-width:768px){
+    #product {padding: 0; margin-top: 0;}
+    #product .inner {max-width: 100%;}
+    #product .product_img {display: none;}
+    #product .m_product_img {display: block;}
+    #product .m_product_img ul li dl dd {font-size: 13px;}
+    #product .m_product_img ul li dl dd .none {display: none;}
+}
+
+
+/* news */
+
+#news h3 {text-align: center; font-size: 50px; text-transform: uppercase; padding-bottom: 100px;}
+
+#news .inner {
+    max-width: 1920px;
+    background: url(../images/Razer_background_1.png) no-repeat center center; width: 100%; height: 660px;
+    text-align: center;
+    position: relative;}
+#news .inner .news1 {position: absolute; top: 0; left: 32%; transform: translateX(-32%); z-index: 55;}
+#news .inner .news2 {position: absolute; top: 0; right: 28%; transform: translateX(-28%);}
+#news .inner p {position: absolute; top: 50%; right: 3%; transform: translate(-50%, -3%); text-align: left; font-size: 20px;
+letter-spacing: -1px; line-height: 2;}
+
+@media all and (max-width:1200px){
+    #news .inner p {display: none;}
+    #news .inner .news1 {position: absolute; top: 0; left: 18%;}
+    #news .inner .news2 {position: absolute; top: 0; right: 10%;}
+}
+@media all and (max-width:768px){
+    #news .inner {background: black; height: 500px;}
+    #news .inner p {display: none;}
+    #news .inner .news1 {position: absolute; top: 0; left: 0%; width: 60%; height: 100%;}
+    #news .inner .news2 {position: absolute; top: 0; right: 0%; width: 60%; height: 90%;}
+}
+
+/* footer */
+
+#footer {padding: 100px 0;}
+#footer .inner {width: 1200px; display: flex; justify-content: space-between; flex-wrap: wrap; align-items: center;}
+#footer .footer_logo img {width: 100px; height: 50px;}
+#footer .footer_txt p {color: white;}
+#footer .footer_sns li {display: inline-block; margin-left: 10px;}
+#footer .footer_sns li:first-child {margin-left: 0;}
+#footer .footer_sns img {width: 40px; height: 40px; padding: 10px; }
+
+@media all and (max-width:1200px){
+    #footer {text-align: center;}
+    #footer .footer_logo {width: 100%;}
+    #footer .footer_txt {width: 100%; padding: 20px 0;}
+    #footer .footer_sns {width: 100%;}
+}
+
+@media all and (max-width: 768px){
+    #footer {margin-top: 80px; padding: 0;}
+    #footer .footer_txt {font-size: 12px;}
+}
+
+
+
+
+/* gotop */
+
+.gotop {display: block; 
+    width: 40px; height: 40px; 
+    position: fixed; 
+    right: 10px; bottom: 50px; 
+    font-size: 0;
+    background: rgba(2, 255, 2, 0.3) url(../images/gotop.png) no-repeat center center;}
